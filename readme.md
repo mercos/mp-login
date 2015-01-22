@@ -4,5 +4,5 @@ Extensão para ajudar a logar no sistema.
 
 Baseado nos projetos:
 
-- ![GitHub Notifier](https://github.com/sindresorhus/github-notifier-chrome)
-- ![Web Components](https://github.com/webcomponents/chrome-webcomponents-extension)
+- [GitHub Notifier](https://github.com/sindresorhus/github-notifier-chrome)
+- [Web Components](https://github.com/webcomponents/chrome-webcomponents-extension)
