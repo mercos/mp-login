@@ -1,0 +1,34 @@
+{
+	"name": "Meus Pedidos Login",
+	"version": "1.0",
+	"description": "Extensão para ajudar a logar no sistema.",
+	"homepage_url": "https://github.com/meuspedidos/mp-login",
+	"manifest_version": 2,
+	"minimum_chrome_version": "36",
+	"icons": {
+		"16": "icon-16.png",
+		"48": "icon-48.png",
+		"128": "icon-128.png"
+	},
+	"permissions": [
+		"activeTab",
+		"tabs"
+	],
+	"optional_permissions": [
+		"*://*/"
+	],
+	"background": {
+		"persistent": false,
+		"scripts": [
+			"api.js",
+			"main.js"
+		]
+	},
+	"browser_action": {
+		"default_icon": {
+			"19": "icon-19.png",
+			"38": "icon-38.png"
+		}
+	},
+	"options_page": "options.html"
+}
