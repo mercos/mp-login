@@ -6,3 +6,6 @@ Baseado nos projetos:
 
 - [GitHub Notifier](https://github.com/sindresorhus/github-notifier-chrome)
 - [Web Components](https://github.com/webcomponents/chrome-webcomponents-extension)
+
+
+Cloning the sub-module: `git submodule update --init --recursive`
