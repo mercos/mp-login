@@ -21,12 +21,8 @@ else if (window.location.host.indexOf('meuspedidos.com.br') !== -1
 
     port.postMessage({tem_slug: true});
 }
-// else {
-//  // mandar msg de ok?
-//  port.postMessage({ok: true});
-// }
 
-// Listens to messages from main.js
+// Listens to messages from background.js
 port.onMessage.addListener(function (msg) {
     if (msg.send_me_slug) {
         var element = document.querySelector('#main h2.text-transparent small');
