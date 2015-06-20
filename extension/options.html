@@ -13,6 +13,13 @@
 				width: 350px;
 			}
 
+            label {
+                width: 70px;
+                display: inline-block;
+                text-align: right;
+                margin-right: 10px;
+            }
+
 			#success_message {
 				margin-top: 10px;
 				padding: 5px 10px;
@@ -50,16 +57,18 @@
 					</header>
 					<div class="content">
 						<section>
-							<h3>Custom URL</h3>
-							<p>Specify the notification URL to your GitHub Enterprise</p>
-							<label for="notification_url">Notification URL</label>
-							<input type="text" id="notification_url" autofocus>
-						</section>
-						<section>
-							<h3>Participating Count</h3>
-							<input type="checkbox" id="use_participating">
-							<label for="use_participating">Only show unread count for issues I'm participating in</label>
-						</section>
+							<label for="admin_url">Admin URL</label>
+							<input type="text" id="admin_url" autofocus>
+                        </section>
+                        <section>
+                            <h3>Credentials</h3>
+                            <label for="email">E-mail</label>
+                            <input type="text" id="email">
+                        </section>
+                        <section>
+                            <label for="password">Password</label>
+                            <input type="password" id="password">
+                        </section>
 						<div class="controls">
 							<button id="save">Save</button>
 							<button id="reset">Reset to Default</button>

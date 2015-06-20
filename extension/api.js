@@ -26,6 +26,9 @@
                     Object.keys(localStorage).forEach(api.settings.revert);
                 },
                 revert: localStorage.removeItem.bind(localStorage)
+            },
+            getUrl: function(slug) {
+                return defaults.url_base + slug + api.settings.get('url_admin');
             }
         };
 

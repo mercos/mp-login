@@ -2,62 +2,39 @@
 	'use strict';
 
 	document.addEventListener('DOMContentLoaded', function () {
-		var formNotificationUrl = document.getElementById('notification_url');
-		var formUseParticipating = document.getElementById('use_participating');
+		var formAdminUrl = document.getElementById('admin_url');
+		var formEmail = document.getElementById('email');
+        var formPassword = document.getElementById('password');
 		var successMessage = document.getElementById('success_message');
 		var successTimeout = null;
 
 		function loadSettings() {
-			formNotificationUrl.value = GitHubNotify.settings.get('notificationUrl');
-			formUseParticipating.checked = GitHubNotify.settings.get('useParticipatingCount');
+			formAdminUrl.value = MPLogin.settings.get('url_admin');
+			formEmail.value = MPLogin.settings.get('login');
+            formPassword.value = MPLogin.settings.get('senha');
 		}
 
 		loadSettings();
 
-		function updateBadge() {
-			chrome.runtime.sendMessage('update');
-		}
-
-		formUseParticipating.addEventListener('change', function () {
-			GitHubNotify.settings.set('useParticipatingCount', formUseParticipating.checked);
-			updateBadge();
-		});
-
 		document.getElementById('save').addEventListener('click', function () {
-			var url = formNotificationUrl.value;
-			url = /\/$/.test(url) ? url : url + '/';
+            var adminUrl = formAdminUrl.value;
+            adminUrl = adminUrl.substring(0, 1) == '/' ? adminUrl : '/' + adminUrl;
 
-			chrome.permissions.request({
-				origins: [url]
-			}, function (granted) {
-				if (granted) {
-					chrome.permissions.remove({
-						origins: [GitHubNotify.settings.get('notificationUrl')]
-					});
-					GitHubNotify.settings.set('notificationUrl', url);
+			MPLogin.settings.set('url_admin', adminUrl);
+            MPLogin.settings.set('login', formEmail.value);
+            MPLogin.settings.set('senha', formPassword.value);
 
-					updateBadge();
-					loadSettings();
+			loadSettings();
 
-					clearTimeout(successTimeout);
-					successMessage.classList.add('visible');
-					successTimeout = setTimeout(function() {
-						successMessage.classList.remove('visible');
-					}, 3000);
-				} else {
-					loadSettings();
-					// TODO: Use a similar message as `successMessage` to show this too
-					console.error('Permission not granted', chrome.runtime.lastError.message);
-				}
-			});
+			clearTimeout(successTimeout);
+			successMessage.classList.add('visible');
+			successTimeout = setTimeout(function() {
+				successMessage.classList.remove('visible');
+			}, 3000);
 		});
 
 		document.getElementById('reset').addEventListener('click', function () {
-			chrome.permissions.remove({
-				origins: [GitHubNotify.settings.get('notificationUrl')]
-			});
-
-			GitHubNotify.settings.reset();
+			MPLogin.settings.reset();
 			loadSettings();
 		});
 	});
