@@ -6,7 +6,7 @@ var port = chrome.runtime.connect({name: "channel"});
 // Sends a message to background.js
 // port.postMessage({});
 
-if (window.location.host.indexOf('meuspedidos.com.br') !== -1
+if (window.location.host.indexOf('app.meuspedidos.com.br') !== -1
     && window.location.pathname.indexOf('/admin/') !== -1
     && !document.querySelector('ul.motivos')
     &&  document.getElementById('id_login')
@@ -15,7 +15,7 @@ if (window.location.host.indexOf('meuspedidos.com.br') !== -1
 
     port.postMessage({pode_logar: true});
 }
-else if (window.location.host.indexOf('meuspedidos.com.br') !== -1
+else if (window.location.host.indexOf('app.meuspedidos.com.br') !== -1
     && window.location.pathname.indexOf('/empresas/') !== -1
     && document.querySelector('#main h2.text-transparent small')) {
 
