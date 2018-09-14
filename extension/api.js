@@ -3,8 +3,8 @@
 
     window.MPLogin = (function(){
         var defaults = {
-            host: 'app.meuspedidos.com.br',
-            url_base: 'https://app.meuspedidos.com.br/',
+            host: 'app.mercos.com',
+            url_base: 'https://app.mercos.com/',
             url_admin: '',
             login: '',
             senha: ''

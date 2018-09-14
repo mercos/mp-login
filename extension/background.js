@@ -28,7 +28,7 @@
     });
 
     chrome.pageAction.onClicked.addListener(function (tab) {
-        if (! isAdminArea(tab)) {
+        if (!isAdminArea(tab)) {
             port.postMessage({send_me_slug: true});
         }
     });
