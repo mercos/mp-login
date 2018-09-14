@@ -21,7 +21,8 @@
             }
 
             if (msg.slug) {
-                var url = MPLogin.getUrl(msg.slug);
+                MPLogin.settings.set('host', msg.host);
+                var url = MPLogin.getUrl(msg.host, msg.slug);
                 chrome.windows.create({"url": url, "incognito": true, "focused": true});
             }
         });

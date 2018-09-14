@@ -3,8 +3,7 @@
 
     window.MPLogin = (function(){
         var defaults = {
-            host: 'app.mercos.com',
-            url_base: 'https://app.mercos.com/',
+            host: '',
             url_admin: '',
             login: '',
             senha: ''
@@ -27,8 +26,8 @@
                 },
                 revert: localStorage.removeItem.bind(localStorage)
             },
-            getUrl: function(slug) {
-                return defaults.url_base + slug + api.settings.get('url_admin');
+            getUrl: function(host, slug) {
+                return 'https://' + host + '/' + slug + api.settings.get('url_admin');
             }
         };
 

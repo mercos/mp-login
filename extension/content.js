@@ -7,11 +7,16 @@
     // Sends a message to background.js
     // port.postMessage({});
 
-    var host = 'app.mercos.com'
-    // this selector is quite fragile, it would be ideal to create a more reliable one.
-    var selector = '#main > div.container-fluid > div > div > div.row-fluid > div.span9 > div > div.box-header > i:nth-child(2)'
+    var isMercos = window.location.host.indexOf('app.mercos.com') !== -1
+    var isMeusPedidos = window.location.host.indexOf('app.meuspedidos.com.br') !== -1
+    var isValidHost = isMercos || isMeusPedidos
 
-    if (window.location.host.indexOf(host) !== -1
+    // these selectors are quite fragile, it would be ideal to create more reliable ones.
+    var selector = isMercos
+        ? '#main > div.container-fluid > div > div > div.row-fluid > div.span9 > div > div.box-header > i:nth-child(2)'
+        : '#main h2.text-transparent small'
+
+    if (isValidHost
         && window.location.pathname.indexOf('/admin/') !== -1
         && !document.querySelector('ul.motivos')
         &&  document.getElementById('id_login')
@@ -20,7 +25,7 @@
 
         port.postMessage({pode_logar: true});
     }
-    else if (window.location.host.indexOf(host) !== -1
+    else if (isValidHost
         && window.location.pathname.indexOf('/empresas/') !== -1
         && document.querySelector(selector)) {
 
@@ -32,12 +37,15 @@
         if (msg.send_me_slug) {
             var element = document.querySelector(selector);
             if (element) {
-                window.console.log('enviando slug');
+                window.console.log('sending slug');
                 var slug = element.innerHTML.trim();
-                port.postMessage({slug: slug});
+                port.postMessage({
+                    slug: slug,
+                    host: window.location.host,
+                });
             }
             else {
-                window.console.log('slug não encontrado');
+                window.console.log('slug not found');
             }
         }
 
