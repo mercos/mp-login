@@ -13,7 +13,7 @@
 
     // these selectors are quite fragile, it would be ideal to create more reliable ones.
     var selector = isMercos
-        ? '#main > div.container-fluid > div > div > div.row-fluid > div.span9 > div > div.box-header > i:nth-child(2)'
+        ? '#js-div-global > div.overlay > section > div.container-fluid > div > div > div.row-fluid > div.span9 > div > div.box-header > i:nth-child(2)'
         : '#main h2.text-transparent small'
 
     if (isValidHost

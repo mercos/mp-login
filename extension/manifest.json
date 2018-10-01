@@ -1,6 +1,6 @@
 {
 	"name": "Meus Pedidos Login",
-	"version": "4.0",
+	"version": "4.1",
 	"description": "Extensão para ajudar a logar no sistema.",
 	"homepage_url": "https://github.com/meuspedidos/mp-login",
 	"manifest_version": 2,
