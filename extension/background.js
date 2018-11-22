@@ -21,14 +21,15 @@
             }
 
             if (msg.slug) {
-                var url = MPLogin.getUrl(msg.slug);
+                MPLogin.settings.set('host', msg.host);
+                var url = MPLogin.getUrl(msg.host, msg.slug);
                 chrome.windows.create({"url": url, "incognito": true, "focused": true});
             }
         });
     });
 
     chrome.pageAction.onClicked.addListener(function (tab) {
-        if (! isAdminArea(tab)) {
+        if (!isAdminArea(tab)) {
             port.postMessage({send_me_slug: true});
         }
     });
