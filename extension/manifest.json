@@ -26,8 +26,8 @@
 	},
 	"content_scripts": [{
         "matches": [
-            "http://*/*",
-            "https://*/*"
+            "http://app.mercos.com/*",
+            "https://app.mercos.com/*"
         ],
         "js": [
             "content.js"
