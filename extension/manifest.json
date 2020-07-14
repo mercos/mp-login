@@ -1,8 +1,8 @@
 {
-	"name": "Meus Pedidos Login",
-	"version": "4.1",
+	"name": "Mercos Login",
+	"version": "1",
 	"description": "Extensão para ajudar a logar no sistema.",
-	"homepage_url": "https://github.com/meuspedidos/mp-login",
+	"homepage_url": "https://github.com/mercos/mp-login",
 	"manifest_version": 2,
 	"minimum_chrome_version": "36",
 	"icons": {
