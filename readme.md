@@ -2,6 +2,8 @@
 
 Extensão para ajudar a logar no sistema.
 
+https://chrome.google.com/webstore/detail/mercos-login/lfpcgmblcdhomfnemgjcocabihbffdam?hl=pt-PT
+
 Baseado nos projetos:
 
 - [GitHub Notifier](https://github.com/sindresorhus/github-notifier-chrome)
