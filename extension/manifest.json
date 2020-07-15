@@ -1,6 +1,6 @@
 {
 	"name": "Mercos Login",
-	"version": "1",
+	"version": "2",
 	"description": "Extensão para ajudar a logar no sistema.",
 	"homepage_url": "https://github.com/mercos/mp-login",
 	"manifest_version": 2,

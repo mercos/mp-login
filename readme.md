@@ -20,5 +20,6 @@ Baseado nos projetos:
 - Create a zip file with the content of the `extension` folder and upload it to the [Chrome Web Store](https://chrome.google.com/webstore/devconsole).
 
 ```
+git submodule update --init --recursive
 zip -r extension{.zip,}
 ```
