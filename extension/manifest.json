@@ -1,9 +1,9 @@
 {
 	"name": "Mercos Login",
-	"version": "2",
-	"description": "Extensão para ajudar a logar no sistema.",
+	"version": "3",
+	"description": "This is a 'private' extension for the support team of the app 'app.mercos.com', not intended to be used for regular users.",
 	"homepage_url": "https://github.com/mercos/mp-login",
-	"manifest_version": 2,
+	"manifest_version": 3,
 	"minimum_chrome_version": "36",
 	"icons": {
 		"16": "icon-16.png",
